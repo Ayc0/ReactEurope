@@ -3,15 +3,15 @@ import { Text } from 'react-native';
 import { TabNavigator } from 'react-navigation';
 
 import Navbar from './navbar';
-import Home from './home';
+import Schedule from './scheduleWrapper';
 
 const App = TabNavigator(
   {
-    schedule: { screen: Home },
-    speakers: { screen: Home },
-    ticket: { screen: Home },
-    userAdd: { screen: Home },
-    infos: { screen: Home },
+    schedule: { screen: Schedule },
+    speakers: { screen: Schedule },
+    ticket: { screen: Schedule },
+    userAdd: { screen: Schedule },
+    infos: { screen: Schedule },
   },
   {
     tabBarPosition: 'bottom',

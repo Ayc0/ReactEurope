@@ -41,7 +41,7 @@ const Navbar = (props: any) => {
     </Tab>
   ));
   return (
-    <View style={styles.tabs}>
+    <View style={styles.navbar}>
       {navbar}
     </View>
   );

@@ -1158,7 +1158,7 @@ braces@^1.8.2:
     preserve "^0.2.0"
     repeat-element "^1.1.2"
 
-bser@1.0.2, bser@^1.0.2:
+bser@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/bser/-/bser-1.0.2.tgz#381116970b2a6deea5646dd15dd7278444b56169"
   dependencies:
@@ -3580,9 +3580,9 @@ react-native-vector-icons@4.1.1:
     prop-types "^15.5.8"
     yargs "^6.3.0"
 
-react-native@^0.44.0:
+"react-native@https://github.com/expo/react-native/archive/sdk-17.0.0.tar.gz":
   version "0.44.0"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.44.0.tgz#06427a30053f2d555c60fe0b9afcc6c778db09de"
+  resolved "https://github.com/expo/react-native/archive/sdk-17.0.0.tar.gz#3b00dedae2d0e5985797e0caaf6c481539598953"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"
@@ -3604,7 +3604,6 @@ react-native@^0.44.0:
     babel-types "^6.21.0"
     babylon "^6.16.1"
     base64-js "^1.1.2"
-    bser "^1.0.2"
     chalk "^1.1.1"
     commander "^2.9.0"
     concat-stream "^1.6.0"
@@ -3648,7 +3647,6 @@ react-native@^0.44.0:
     regenerator-runtime "^0.9.5"
     request "^2.79.0"
     rimraf "^2.5.4"
-    sane "~1.4.1"
     semver "^5.0.3"
     shell-quote "1.6.1"
     source-map "^0.5.6"
@@ -3925,17 +3923,6 @@ rx-lite@^3.1.2:
 safe-buffer@^5.0.1, safe-buffer@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
-
-sane@~1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/sane/-/sane-1.4.1.tgz#88f763d74040f5f0c256b6163db399bf110ac715"
-  dependencies:
-    exec-sh "^0.2.0"
-    fb-watchman "^1.8.0"
-    minimatch "^3.0.2"
-    minimist "^1.1.1"
-    walker "~1.0.5"
-    watch "~0.10.0"
 
 sane@~1.5.0:
   version "1.5.0"

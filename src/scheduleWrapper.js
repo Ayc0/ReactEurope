@@ -10,9 +10,9 @@ const sortedSchedule = {};
 schedule.forEach(event => {
   const date = new Date(event.startDate);
   if (Object.keys(sortedSchedule).includes(date.toDateString())) {
-    sortedSchedule[date.toDateString()].push(date);
+    sortedSchedule[date.toDateString()].push(event);
   } else {
-    sortedSchedule[date.toDateString()] = [date];
+    sortedSchedule[date.toDateString()] = [event];
   }
 });
 
@@ -32,7 +32,6 @@ const sort = (_date1: string, _date2: string) => {
 };
 
 days.sort(sort);
-console.log(days);
 days.forEach(date => {
   routeConfigs[date] = {
     screen: props => (

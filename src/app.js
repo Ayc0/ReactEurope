@@ -1,22 +1,23 @@
 // @flow
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text } from 'react-native';
+import { TabNavigator } from 'react-navigation';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+import Navbar from './navbar';
+import Home from './home';
+
+const App = TabNavigator(
+  {
+    schedule: { screen: Home },
+    speakers: { screen: Home },
+    ticket: { screen: Home },
+    userAdd: { screen: Home },
+    infos: { screen: Home },
   },
-});
-
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open main.js to start working on your app!</Text>
-      </View>
-    );
+  {
+    tabBarPosition: 'bottom',
+    swipeEnabled: false,
+    tabBarComponent: Navbar,
   }
-}
+);
+
+export default App;

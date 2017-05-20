@@ -1,12 +1,105 @@
 [ignore]
-.*/build/.*
-.*/node_modules/.*
+; We fork some components by platform
+.*/*[.]android.js
+
+; Ignore "BUCK" generated dirs
+<PROJECT_ROOT>/\.buckd/
+
+; Ignore unexpected extra "@providesModule"
+.*/node_modules/.*/node_modules/fbjs/.*
+
+; Ignore duplicate module providers
+; For RN Apps installed via npm, "Libraries" folder is inside
+; "node_modules/react-native" but in the source repo it is in the root
+.*/Libraries/react-native/React.js
+.*/Libraries/react-native/ReactNative.js
+
+; Additional create-react-native-app ignores
+
+; Ignore duplicate module providers
+.*/node_modules/fbemitter/lib/*
+
+; Ignore misbehaving dev-dependencies
+.*/node_modules/xdl/build/*
+.*/node_modules/reqwest/tests/*
+
+; Ignore missing expo-sdk dependencies (temporarily)
+; https://github.com/exponent/exponent-sdk/issues/36
+.*/node_modules/expo/src/*
+
+; Ignore react-native-fbads dependency of the expo sdk
+.*/node_modules/react-native-fbads/*
+
+.*/node_modules/react-native/Libraries/Components/.*
+.*/node_modules/react-native/Libraries/Lists/.*
+.*/node_modules/react-native/Libraries/Animated/.*
+.*/node_modules/react-native/Libraries/CameraRoll/.*
+.*/node_modules/react-native/Libraries/Renderer/.*
+.*/node_modules/react-native/Libraries/ReactNative/.*
+.*/node_modules/react-native/Libraries/Performance/.*
+.*/node_modules/react-native/Libraries/Modal/.*
+.*/node_modules/react-native/Libraries/RCTTest/.*
+.*/node_modules/react-native/Libraries/StyleSheet/.*
+.*/node_modules/react-native/Libraries/Inspector/.*
+.*/node_modules/react-native/Libraries/Text/.*
+.*/node_modules/react-native/Libraries/Interaction/.*
+.*/node_modules/react-native/lib/.*
+.*/node_modules/react-native/Libraries/Utilities/.*
+.*/node_modules/react-native/Libraries/Image/.*
+.*/node_modules/react-native/Libraries/Experimental/.*
+.*/node_modules/react-native/Libraries/Core/.*
+.*/node_modules/react-native/Libraries/Network/.*
+.*/node_modules/react-native/Libraries/LayoutAnimation/.*
+.*/node_modules/react-native/Libraries/EventEmitter/.*
+.*/node_modules/react-native/Libraries/BatchedBridge/.*
+.*/node_modules/react-native/Libraries/BugReporting/.*
+.*/node_modules/react-native/Libraries/Geolocation/.*
+.*/node_modules/react-native/Libraries/JSInspector/.*
+.*/node_modules/react-native/Libraries/Linking/.*
+.*/node_modules/react-native/Libraries/WebSocket/.*
+.*/node_modules/react-native/Libraries/Share/.*
+.*/node_modules/react-native/Libraries/Vibration/.*
+.*/node_modules/react-native/Libraries/Settings/.*
+.*/node_modules/react-native/Libraries/Alert/.*
+.*/node_modules/react-native/Libraries/AdSupport/.*
+.*/node_modules/react-native/Libraries/AdSupportIOS/.*
+.*/node_modules/react-native/Libraries/AppState/.*
+.*/node_modules/react-native/Libraries/PermissionsAndroid/.*
+.*/node_modules/react-native/Libraries/PushNotificationIOS/.*
+.*/node_modules/react-native/Libraries/Sample/.*
+.*/node_modules/react-native/Libraries/ActionSheetIOS/.*
+.*/node_modules/react-native/Libraries/DebugComponentHierarchy/.*
+
+
+
 
 [include]
 
 [libs]
 node_modules/react-native/Libraries/react-native/react-native-interface.js
 node_modules/react-native/flow
-./flow-typed/*
+flow/
 
 [options]
+module.system=haste
+
+emoji=true
+
+experimental.strict_type_args=true
+
+munge_underscores=true
+
+module.name_mapper='^[./a-zA-Z0-9$_-]+\.\(bmp\|gif\|jpg\|jpeg\|png\|psd\|svg\|webp\|m4v\|mov\|mp4\|mpeg\|mpg\|webm\|aac\|aiff\|caf\|m4a\|mp3\|wav\|html\|pdf\)$' -> 'RelativeImageStub'
+
+suppress_type=$FlowIssue
+suppress_type=$FlowFixMe
+suppress_type=$FixMe
+
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe\\($\\|[^(]\\|(\\(>=0\\.\\(4[0-0]\\|[1-3][0-9]\\|[0-9]\\).[0-9]\\)? *\\(site=[a-z,_]*react_native[a-z,_]*\\)?)\\)
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue\\((\\(>=0\\.\\(4[0-0]\\|[1-3][0-9]\\|[0-9]\\).[0-9]\\)? *\\(site=[a-z,_]*react_native[a-z,_]*\\)?)\\)?:? #[0-9]+
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
+suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
+
+unsafe.enable_getters_and_setters=true
+
+
